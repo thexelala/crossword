@@ -1,8 +1,8 @@
 // Fonction principale pour résoudre la grille de mots croisés
 function crosswordSolver(puzzleStr, wordList){
     // Divise la chaîne de caractères représentant la grille en un wordList de lignes
-    if (typeof puzzleStr !== 'string' || typeof wordList !== 'string'){
-        console.log("ERROR le puzzle n' est pas une string ou la wordlist n'est pas un tableau")
+    if (typeof puzzleStr !== 'string' || !Array.isArray(wordList)){
+        console.log("ERROR le puzzle n'est pas une string ou la wordlist n'est pas un tableau")
         return
     }
     let grille = puzzleStr.split("\n")
@@ -204,31 +204,37 @@ function checkHorizontal(x, y, grille, word){
       return grille
 }
 
+
+
 // const puzzle = '2001\n0..0\n2000\n0..0'
 // const words = ['casa', 'alan', 'ciao', 'anta']
-//c good
+//validé
 
 // const puzzle = '0001\n0..0\n3000\n0..0'
 // const words = ['casa', 'alan', 'ciao', 'anta']
-// c good
+//validé
 
 // const puzzle = '2001\n0..0\n1000\n0..0'
 // const words = ['casa', 'casa', 'ciao', 'anta']
-//c good
+// validé
 
 // const puzzle = ''
 // const words = ['casa', 'alan', 'ciao', 'anta']
-// c good
+// validé
 
 // const puzzle = 123
 // const words = ['casa', 'alan', 'ciao', 'anta']
-//c good
+// validé
 
 // const puzzle = ''
 // const words = 123
-// c good
+// validé
 
-// const puzzle = ''
-// const words = ['123']
-// c good
+const puzzle = '2000\n0...\n0...\n0...'
+const words = ['abba', 'assa']
+
+// const puzzle = '2001\n0..0\n1000\n0..0'
+// const words = ['aaab', 'aaac', 'aaad', 'aaae']
+
+
 console.log(crosswordSolver(puzzle, words))
